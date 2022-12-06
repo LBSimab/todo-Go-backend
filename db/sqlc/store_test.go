@@ -40,7 +40,7 @@ func TestTaskTx(t *testing.T) {
 		result := <-resultz
 		require.NotEmpty(t, result)
 		taskz := result.Task
-		require.Equal(t, taskz.ID, account1.ID)
+		require.Equal(t, taskz.Supervisor.Int32, account1.ID)
 
 	}
 }

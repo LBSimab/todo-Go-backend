@@ -25,13 +25,13 @@ CREATE TABLE "commits" (
   "supervisor_id" int
 );
 
-CREATE INDEX ON "Tasks" ("name", "finished", "category");
+CREATE INDEX ON "tasks" ("name", "finished", "category");
 
 CREATE INDEX ON "users" ("full_name", "supervisor");
 
 CREATE INDEX ON "commits" ("title", "category", "supervisor_id", "user_id");
 
-ALTER TABLE "Tasks" ADD FOREIGN KEY ("supervisor") REFERENCES "users" ("id");
+ALTER TABLE "tasks" ADD FOREIGN KEY ("supervisor") REFERENCES "users" ("id");
 
 ALTER TABLE "commits" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
 

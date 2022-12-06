@@ -35,6 +35,6 @@ ALTER TABLE "tasks" ADD FOREIGN KEY ("supervisor") REFERENCES "users" ("id");
 
 ALTER TABLE "commits" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
 
-ALTER TABLE "commits" ADD FOREIGN KEY ("task_id") REFERENCES "Tasks" ("id");
+ALTER TABLE "commits" ADD FOREIGN KEY ("task_id") REFERENCES "tasks" ("id");
 
 ALTER TABLE "commits" ADD FOREIGN KEY ("supervisor_id") REFERENCES "users" ("id");

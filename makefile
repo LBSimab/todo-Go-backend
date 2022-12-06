@@ -10,10 +10,10 @@ sqlc:
 
 
 migrateup:
-		migrate -path db/migration -database "postgresql://icarus:secret@localhost:9999/tasksdb?sslmode=disable" -verbose up
+		migrate -path db/migration -database "postgresql://icarus:secret@localhost:5432/tasksdb?sslmode=disable" -verbose up
 
 migratedown:
-		migrate -path db/migration -database "postgresql://icarus:secret@localhost:9999/tasksdb?sslmode=disable" -verbose down
+		migrate -path db/migration -database "postgresql://icarus:secret@localhost:5432/tasksdb?sslmode=disable" -verbose down
 
 
 

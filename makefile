@@ -1,7 +1,12 @@
 createdb: 
-docker exec -it tasks createdb --username=icarus --owner=icarus tasksdb
+	docker exec -it tasks createdb --username=icarus --owner=icarus tasksdb
 dropdb: 
-docker exec -it tasks dropdb  tasksdb --username=icarus+
+	docker exec -it tasks dropdb  tasksdb --username=icarus+
+test:
+	go test -v -cover ./...
+
+sqlc:
+	sqlc generate
 
 
 
@@ -14,8 +19,4 @@ docker exec -it tasks dropdb  tasksdb --username=icarus+
 
 
 
-
-
-
-
-.PHONY: createdb dropdb
+.PHONY: createdb dropdb test sqlc

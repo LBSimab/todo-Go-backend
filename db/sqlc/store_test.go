@@ -15,10 +15,10 @@ func TestTaskTx(t *testing.T) {
 
 	errz := make(chan error)
 	resultz := make(chan TaskTxResults)
-
+	account1 := CreateRandomAccount(t)
 	n := 5
 	for i := 0; i < n; i++ {
-		account1 := CreateRandomAccount(t)
+
 		go func() {
 
 			result, err := store.TaskTx(context.Background(), TaskTxParams{
@@ -39,8 +39,8 @@ func TestTaskTx(t *testing.T) {
 		require.NoError(t, err)
 		result := <-resultz
 		require.NotEmpty(t, result)
-		println(result.Task.ID)
-		println(result.Task.Supervisor.Int32)
+		taskz := result.Task
+		require.Equal(t, taskz.ID, account1.ID)
 
 	}
 }

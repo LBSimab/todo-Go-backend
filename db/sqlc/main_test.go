@@ -11,7 +11,7 @@ import (
 
 const (
 	dbDriver = "postgres"
-	dbSource = "postgresql://icarus:secret@localhost:9999/tasks?sslmode=disable"
+	dbSource = "postgresql://icarus:secret@localhost:5432/tasks?sslmode=disable"
 )
 
 var testQueries *Queries

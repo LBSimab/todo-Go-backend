@@ -9,6 +9,11 @@ sqlc:
 	sqlc generate
 
 
+migrateup:
+		migrate -path db/migration -database "postgresql://icarus:secret@localhost:5432/tasksdb?sslmode=disable" -verbose up
+
+migratedown:
+		migrate -path db/migration -database "postgresql://icarus:secret@localhost:5432/tasksdb?sslmode=disable" -verbose down
 
 
 
@@ -19,4 +24,4 @@ sqlc:
 
 
 
-.PHONY: createdb dropdb test sqlc
+.PHONY: createdb dropdb test sqlc migaretup migratedown
